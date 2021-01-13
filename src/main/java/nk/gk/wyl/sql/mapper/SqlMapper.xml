@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC
+        "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="nk.gk.wyl.sql.mapper.SqlMapper">
+    <sql id="whereSql">
+        ${sql}
+    </sql>
+    <!-- 查询列表数据 -->
+    <select id="getList"
+            parameterType="map"
+            resultType="map">
+        select
+        *
+        from
+        ${table}
+        <include
+                refid="whereSql"></include>
+    </select>
+    <!-- insert -->
+    <insert id="insertSql"
+            parameterType="map">
+        ${sql}
+    </insert>
+    <!-- select  -->
+    <select id="selectSql"
+            parameterType="map"
+            resultType="map">
+        ${sql}
+    </select>
+    <!-- update -->
+    <update id="updateSql"
+            parameterType="map">
+        ${sql}
+    </update>
+    <delete id="deleteSql"
+            parameterType="map">
+        ${sql}
+    </delete>
+
+</mapper>
